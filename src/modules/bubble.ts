@@ -1,13 +1,13 @@
 
 export class Bubble {
-    private x: number;
-    private y: number;
-    private size: number;
-    private xSpeed: number;
-    private ySpeed: number;
+    private x!: number;
+    private y!: number;
+    private size!: number;
+    private xSpeed!: number;
+    private ySpeed!: number;
     private stopped: boolean = false;
-    private color: string;
-    private borderColor: string;
+    private color!: string;
+    private borderColor!: string;
 
     /* TODO REQUIRED - What's missing here? Add it! */
 

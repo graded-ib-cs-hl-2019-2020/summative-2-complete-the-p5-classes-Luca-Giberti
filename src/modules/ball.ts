@@ -1,8 +1,8 @@
 
 export class Ball {
-  private x: number;
-  private y: number;
-  private size: number;
+  private x!: number;
+  private y!: number;
+  private size!: number;
   private xSpeed: number = random(-3, 3);
   private ySpeed: number = random(-3, 3);
   private stopped: boolean = false;

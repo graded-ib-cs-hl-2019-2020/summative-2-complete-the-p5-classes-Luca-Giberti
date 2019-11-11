@@ -1,3 +1,4 @@
+
 /* Programming Summative 2
 
     This summative comes in 2 parts.
@@ -37,23 +38,38 @@ function setup() {
     let numBalls = 10;
     let numFlakes = 10;
     createCanvas(500, 500);
-    for (/* TODO REQUIRED - fill this in*/) {
+    for (let i = 0; i < numBalls; i++) {
         balls[i] = new Ball(random(25, width - 25), random(25, height - 25), random(10, 50));
         /* TODO OPTIONAL - make the balls a random color */
     }
-    for (/* TODO REQUIRED  - fill this in*/) {
+    for (let i = 0; i < numBubbles; i++) {
         /* TODO REQUIRED - add the bubbles */
+        bubbles[i] = new Bubble();
     }
-    for (/* TODO REQUIRED */) {
+    for (let i = 0; i < numFlakes; i++) {
         /* TODO REQUIRED - add the snowflakes */
+
+        snowflakes[i] = new Snowflake();
+
     }
 }
 
 function draw() {
     background("skyblue");
-    for (/* TODO REQUIRED*/) {
+    for (let i = 0; i < balls.length; i = i + 1) {
         balls[i].draw();
         balls[i].move();
+
+    }
+    for (let i = 0; i < bubbles.length; i = i + 1) {
+        bubbles[i].draw();
+        bubbles[i].move();
+
+    }
+    for (let i = 0; i < snowflakes.length; i = i + 1) {
+        snowflakes[i].draw();
+        snowflakes[i].move();
+
     }
     /* TODO REQUIRED - Draw and move the bubbles and flakes */
 }
