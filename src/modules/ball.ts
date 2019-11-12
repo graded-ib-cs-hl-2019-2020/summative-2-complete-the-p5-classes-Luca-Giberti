@@ -1,8 +1,8 @@
 
 export class Ball {
-  private x!: number;
-  private y!: number;
-  private size!: number;
+  private x: number;
+  private y: number;
+  private size: number;
   private xSpeed: number = random(-3, 3);
   private ySpeed: number = random(-3, 3);
   private stopped: boolean = false;
@@ -10,10 +10,16 @@ export class Ball {
   private borderColor: string = "black";
 
   /* TODO REQUIRED - add accessors and mutators for x, y, size, color, and borderColor */
+  public getX() { return this.x }
+  public setX(x: number) { this.x = x }
   constructor(x: number, y: number, size: number) {
-    /* TODO REQUIRED = Build your constructor */
-    /* TODO OPTIONAL - add optional parameters to set color and borderColor on creation of the object */
+    this.x = x;
+    this.y = y;
+    this.size = size;
   }
+  /* TODO REQUIRED = Build your constructor */
+  /* TODO OPTIONAL - add optional parameters to set color and borderColor on creation of the object */
+
 
   public stop() {
     this.stopped = true;
