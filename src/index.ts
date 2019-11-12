@@ -43,11 +43,10 @@ function setup() {
         /* TODO OPTIONAL - make the balls a random color */
     }
     for (let i = 0; i < numBubbles; i++) {
-        /* TODO REQUIRED - add the bubbles */
+
         bubbles[i] = new Bubble(random(25, width - 25), random(25, height - 25), random(10, 50));
     }
     for (let i = 0; i < numFlakes; i++) {
-        /* TODO REQUIRED - add the snowflakes */
 
         snowflakes[i] = new Snowflake(random(25, width - 25), random(25, height - 25), random(10, 50));
 
