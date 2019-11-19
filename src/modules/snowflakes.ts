@@ -31,12 +31,18 @@ export class Snowflake {
     }
 
     public draw(): void {
+        stroke(this.color);
+        line(this.x, this.y + this.size / 2, this.x, this.y - this.size / 2);
+        line(this.x + this.size / 2, this.y, this.x - this.size / 2, this.y);
+        line(this.x - this.size / 3, this.y - this.size / 3, this.x + this.size / 3, this.y + this.size / 3);
+        line(this.x - this.size / 3, this.y + this.size / 3, this.x + this.size / 3, this.y - this.size / 3);
         /* TODO REQUIRED - draw the bubbles */
         if (this.stopped == false) {
             this.x = this.xSpeed + this.x;
             this.y = this.ySpeed + this.y;
             this.doBorderBehavior();
         }
+
     }
 
     public move(): void {
