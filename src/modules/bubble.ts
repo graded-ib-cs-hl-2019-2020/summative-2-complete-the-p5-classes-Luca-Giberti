@@ -1,4 +1,4 @@
-
+//Make only move in X
 export class Bubble {
     private x: number;
     private y: number;
@@ -16,7 +16,7 @@ export class Bubble {
         this.y = y;
         this.size = size;
     }
-    /* TODO REQUIRED - What's missing here? Add it! */
+
 
     public stop() {
         this.stopped = true;
@@ -27,7 +27,7 @@ export class Bubble {
     }
 
     public draw(): void {
-        /* TODO REQUIRED - draw the bubbles */
+
         fill(this.color);
         stroke(this.borderColor);
         ellipse(this.x, this.y, this.size);
@@ -35,8 +35,8 @@ export class Bubble {
     }
 
     public move(): void {
-        /* TODO REQUIRED - Make the bubbles move as long as they aren't stopped. Model after ball behavior. */
-        /* The doBorderBehavior is built in for you below. */
+
+
         if (this.stopped == false) {
             this.x = this.xSpeed + this.x;
             this.y = this.ySpeed + this.y;
@@ -53,16 +53,19 @@ export class Bubble {
 
     /* This border behavior implements a wrap, so bubbles will flip over to the other side */
     private doBorderBehavior() {
-        if (this.x < -this.size / 2) {
-            this.x = width + this.size / 2;
-        } else if (this.x > width + this.size / 2) {
-            this.x = -this.size / 2;
-        }
-        if (this.y < -this.size / 2) {
-            this.y = height + this.size / 2;
-        } else if (this.y > height + this.size / 2) {
-            this.y = -this.size / 2;
-        }
-    }
+        if (this.x < this.size / 2) {
+            this.x = this.size / 2;
+            this.xSpeed = -this.xSpeed;
+          } else if (this.x > width - this.size / 2) {
+            this.x = width - this.size / 2;
+            this.xSpeed = -this.xSpeed;
+          }
+          if (this.y < this.size / 2) {
+            this.y = this.size / 2;
+            this.ySpeed = -this.ySpeed;
+          } else if (this.y > height - this.size / 2) {
+            this.ySpeed = -this.ySpeed;
+            this.y = height - this.size / 2;
+          }
 }
-
+}

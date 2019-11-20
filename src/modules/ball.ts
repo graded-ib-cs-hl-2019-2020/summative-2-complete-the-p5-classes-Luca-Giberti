@@ -1,4 +1,4 @@
-
+//make only move in Y
 export class Ball {
   private x: number;
   private y: number;
@@ -9,7 +9,7 @@ export class Ball {
   private color: string = "rgb(" + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + ")";;
   private borderColor: string = this.color;
 
-  /* TODO REQUIRED - add accessors and mutators for x, y, size, color, and borderColor */
+
   public getX() { return this.x }
   public setX(x: number) { this.x = x }
   constructor(x: number, y: number, size: number) {
@@ -17,8 +17,7 @@ export class Ball {
     this.y = y;
     this.size = size;
   }
-  /* TODO REQUIRED = Build your constructor */
-  /* TODO OPTIONAL - add optional parameters to set color and borderColor on creation of the object */
+
 
 
   public stop() {
