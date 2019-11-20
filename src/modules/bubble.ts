@@ -6,8 +6,8 @@ export class Bubble {
     private xSpeed: number = random(-3, 3);
     private ySpeed: number = random(-3, 3);
     private stopped: boolean = false;
-    private color: string = "black";
-    private borderColor: string = "yellow";
+    private color: string = "rgb(" + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + ")";
+    private borderColor: string = this.color;
 
     public getX() { return this.x }
     public setX(x: number) { this.x = x }
@@ -28,11 +28,10 @@ export class Bubble {
 
     public draw(): void {
         /* TODO REQUIRED - draw the bubbles */
-        if (this.stopped == false) {
-            this.x = this.xSpeed + this.x;
-            this.y = this.ySpeed + this.y;
-            this.doBorderBehavior();
-        }
+        fill(this.color);
+        stroke(this.borderColor);
+        ellipse(this.x, this.y, this.size);
+
     }
 
     public move(): void {

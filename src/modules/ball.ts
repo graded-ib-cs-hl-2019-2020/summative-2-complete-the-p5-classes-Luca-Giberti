@@ -6,8 +6,8 @@ export class Ball {
   private xSpeed: number = random(-3, 3);
   private ySpeed: number = random(-3, 3);
   private stopped: boolean = false;
-  private color: string = "red";
-  private borderColor: string = "black";
+  private color: string = "rgb(" + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + ")";;
+  private borderColor: string = this.color;
 
   /* TODO REQUIRED - add accessors and mutators for x, y, size, color, and borderColor */
   public getX() { return this.x }
