@@ -1,10 +1,10 @@
-//make only move in Y
+
 export class Ball {
   private x: number;
   private y: number;
   private size: number;
-  private xSpeed: number = random(-3, 3);
-  private ySpeed: number = random(-3, 3);
+  private xSpeed: number = random(-4, 4);
+  private ySpeed: number = random(-4, 4);
   private stopped: boolean = false;
   private color: string = "rgb(" + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + ")";;
   private borderColor: string = this.color;

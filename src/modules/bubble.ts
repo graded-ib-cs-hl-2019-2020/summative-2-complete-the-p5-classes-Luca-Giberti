@@ -3,8 +3,8 @@ export class Bubble {
     private x: number;
     private y: number;
     private size: number;
-    private xSpeed: number = random(-3, 3);
-    private ySpeed: number = random(-3, 3);
+    private xSpeed: number = random(-5, 5);
+    private ySpeed: number = random(-5, 5);
     private stopped: boolean = false;
     private color: string = "rgb(" + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + ")";
     private borderColor: string = this.color;
@@ -36,10 +36,10 @@ export class Bubble {
 
     public move(): void {
 
-
+// need to make transparent
         if (this.stopped == false) {
             this.x = this.xSpeed + this.x;
-            this.y = this.ySpeed + this.y;
+
             this.doBorderBehavior();
         }
     }
@@ -53,19 +53,16 @@ export class Bubble {
 
     /* This border behavior implements a wrap, so bubbles will flip over to the other side */
     private doBorderBehavior() {
-        if (this.x < this.size / 2) {
-            this.x = this.size / 2;
-            this.xSpeed = -this.xSpeed;
-          } else if (this.x > width - this.size / 2) {
-            this.x = width - this.size / 2;
-            this.xSpeed = -this.xSpeed;
-          }
-          if (this.y < this.size / 2) {
-            this.y = this.size / 2;
-            this.ySpeed = -this.ySpeed;
-          } else if (this.y > height - this.size / 2) {
-            this.ySpeed = -this.ySpeed;
-            this.y = height - this.size / 2;
-          }
-}
+        if (this.x < -this.size / 2) {
+            this.x = width + this.size / 2;
+        } else if (this.x > width + this.size / 2) {
+            this.x = -this.size / 2;
+        }
+        if (this.y < -this.size / 2) {
+            this.y = height + this.size / 2;
+        } else if (this.y > height + this.size / 2) {
+            this.y = -this.size / 2;
+
+        }
+    }
 }
