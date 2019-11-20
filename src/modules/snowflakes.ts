@@ -6,11 +6,11 @@ export class Snowflake {
     private x: number;
     private y: number;
     private size: number;
-    private xSpeed: number = random(-3, 3);
-    private ySpeed: number = random(-3, 3);
+    private xSpeed: number = random(-2, 2);
+    private ySpeed: number = random(-2, 2);
     private stopped: boolean = false;
-    private color: string = "burgundy";
-    private borderColor: string = "green";
+    private color: string = "white";
+    private borderColor: string = "white";
 
     public getX() { return this.x }
     public setX(x: number) { this.x = x }
@@ -20,7 +20,7 @@ export class Snowflake {
         this.size = size;
     }
 
-    /* TODO REQUIRED - What's missing here? Add it! */
+
 
     public stop() {
         this.stopped = true;
@@ -36,9 +36,9 @@ export class Snowflake {
         line(this.x + this.size / 2, this.y, this.x - this.size / 2, this.y);
         line(this.x - this.size / 3, this.y - this.size / 3, this.x + this.size / 3, this.y + this.size / 3);
         line(this.x - this.size / 3, this.y + this.size / 3, this.x + this.size / 3, this.y - this.size / 3);
-        /* TODO REQUIRED - draw the bubbles */
+
         if (this.stopped == false) {
-            this.x = this.xSpeed + this.x;
+
             this.y = this.ySpeed + this.y;
             this.doBorderBehavior();
         }
@@ -46,10 +46,9 @@ export class Snowflake {
     }
 
     public move(): void {
-        /* TODO REQUIRED - Make the bubbles move as long as they aren't stopped. Model after ball behavior. */
-        /* The doBorderBehavior is built in for you below. */
+
         if (this.stopped == false) {
-            this.x = this.xSpeed + this.x;
+
             this.y = this.ySpeed + this.y;
             this.doBorderBehavior();
         }
@@ -63,7 +62,6 @@ export class Snowflake {
         return this.distFromMouse() < this.size / 2;
     }
 
-    /* This border behavior implements a wrap, so bubbles will flip over to the other side */
     private doBorderBehavior() {
         if (this.x < -this.size / 2) {
             this.x = width + this.size / 2;
