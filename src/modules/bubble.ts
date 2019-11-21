@@ -1,4 +1,4 @@
-//Make only move in X
+
 export class Bubble {
     private x: number;
     private y: number;

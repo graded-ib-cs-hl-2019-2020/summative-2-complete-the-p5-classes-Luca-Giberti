@@ -40,7 +40,6 @@ function setup() {
     createCanvas(500, 500);
     for (let i = 0; i < numBalls; i++) {
         balls[i] = new Ball(random(25, width - 25), random(25, height - 25), random(10, 50));
-        /* TODO OPTIONAL - make the balls a random color */
     }
     for (let i = 0; i < numBubbles; i++) {
 
@@ -70,7 +69,7 @@ function draw() {
         snowflakes[i].move();
 
     }
-    /* TODO REQUIRED - Draw and move the bubbles and flakes */
+
 }
 
 /* TODO OPTIONAL - add a function mousePressed() that either stops or starts objects from moving
