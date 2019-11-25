@@ -3,8 +3,8 @@ export class Bubble {
     private x: number;
     private y: number;
     private size: number;
-    private xSpeed: number = random(-5, 5);
-    private ySpeed: number = random(0, 5);
+    private xSpeed: number = random(-5, 2);
+    private ySpeed: number = random(-2, -1);
     private stopped: boolean = false;
     private color: string = "rgba(255,255,255,.5)";
     private borderColor: string = "black";
@@ -36,10 +36,10 @@ export class Bubble {
 
     public move(): void {
 
-// need to make transparent
-        if (this.stopped == false) {
 
+        if (this.stopped == false) {
             this.x = this.xSpeed + this.x;
+            this.y = this.ySpeed + this.y;
             this.doBorderBehavior();
         }
     }

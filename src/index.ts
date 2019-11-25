@@ -34,8 +34,8 @@ let bubbles: Bubble[] = [];
 let clickedIndex = -1;
 
 function setup() {
-    let numBubbles = 10;
-    let numBalls = 10;
+    let numBubbles = 15;
+    let numBalls = 15;
     let numFlakes = 10;
     createCanvas(500, 500);
     for (let i = 0; i < numBalls; i++) {
